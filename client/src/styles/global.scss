@@ -1,0 +1,26 @@
+@import './constants.scss';
+@import './mixins.scss';
+@import './fonts.scss';
+@import './normalize.scss';
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  background: $white;
+  position: relative;
+  z-index: 0;
+}

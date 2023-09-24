@@ -1,0 +1,20 @@
+@import './mixins';
+
+@include font-face("Poppins", "Poppins-Black", 900);
+@include font-face("Poppins", "Poppins-BlackItalic", 900, Italic);
+@include font-face("Poppins", "Poppins-ExtraBold", 800);
+@include font-face("Poppins", "Poppins-ExtraBoldItalic", 800, Italic);
+@include font-face("Poppins", "Poppins-Bold", 700);
+@include font-face("Poppins", "Poppins-BoldItalic", 700, Italic);
+@include font-face("Poppins", "Poppins-SemiBold", 600);
+@include font-face("Poppins", "Poppins-SemiBoldItalic", 600, Italic);
+@include font-face("Poppins", "Poppins-Medium", 500);
+@include font-face("Poppins", "Poppins-MediumItalic", 500, Italic);
+@include font-face("Poppins", "Poppins-Regular", 400);
+@include font-face("Poppins", "Poppins-RegularItalic", 400, Italic);
+@include font-face("Poppins", "Poppins-Light", 300);
+@include font-face("Poppins", "Poppins-LightItalic", 300, Italic);
+@include font-face("Poppins", "Poppins-ExtraLight", 200);
+@include font-face("Poppins", "Poppins-ExtraLightItalic", 200, Italic);
+@include font-face("Poppins", "Poppins-Thin", 100);
+@include font-face("Poppins", "Poppins-ThinItalic", 100, Italic);
