@@ -1,19 +1,20 @@
 import {Dispatch} from 'react';
 
 type headerType = {
-	address: string
+	address: string;
+	stocks: string;
+	paymentAndDelivery: string;
 }
 
 type languageType = {
-	header: headerType
+	header: headerType;
 }
 
-export type onlyOneLanguageType = 'ru' | 'en';
 
 export type LanguageDataType = {
-	currentLanguage: onlyOneLanguageType;
-	setCurrentLanguage: Dispatch<onlyOneLanguageType>;
-	translate: (path: string) => void;
+	currentLanguage: string;
+	setCurrentLanguage: Dispatch<string>;
+	translate: (path: string) => string;
 }
 
 export type LanguagesTypes = {

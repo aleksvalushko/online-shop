@@ -1,8 +1,8 @@
-const apiError = require('../error/apiErrors');
+const apiErrors = require('../error/apiErrors');
 
 module.exports = function(error, request, response, next) {
-  if (error instanceof apiError) {
+  if (error instanceof apiErrors) {
     return response.status(error.status).json({message: error.message});
   }
-  return next(apiError.serverError('Something went wrong.'));
+  return next(apiErrors.serverError('Something went wrong.'));
 }

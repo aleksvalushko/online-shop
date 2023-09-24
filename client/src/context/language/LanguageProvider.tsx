@@ -1,22 +1,18 @@
-import React, { useCallback, useState, PropsWithChildren } from 'react';
+import React, { useCallback, useState } from 'react';
 import LanguageContext from './LanguageContext';
 import en from '../../locales/en.json';
 import ru from '../../locales/ru.json';
 import { get } from 'lodash';
 import { EN, RU } from '../../constants';
+import { LanguagesTypes } from '../../types/language';
 
-export interface ILanguageData {
-	ru: string;
-	en: string;
-}
-
-const LanguageProvider: React.FC = ({ children }: PropsWithChildren) => {
-	const [currentLanguage, setCurrentLanguage] = useState(EN);
-	const dictionaries: ILanguageData = { [EN]: en, [RU]: ru };
+const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
+	const [currentLanguage, setCurrentLanguage] = useState<string>(RU);
+	const dictionaries: LanguagesTypes = { [RU]: ru, [EN]: en };
 
 	const translate = useCallback(
 		(path: string) => {
-			const dictionary = dictionaries[currentLanguage] ?? ru;
+			const dictionary = dictionaries[currentLanguage as keyof LanguagesTypes] ?? ru;
 			return get(dictionary, path, '');
 		},
 		[currentLanguage]

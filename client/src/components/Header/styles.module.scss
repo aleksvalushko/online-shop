@@ -1,0 +1,67 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/constants.scss';
+
+.header {
+  @include flex();
+  max-width: 100%;
+  margin: 20px 260px;
+
+  .info {
+    width: 100%;
+    @include flex('center', 'space-between');
+
+    div {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 20%;
+
+      img {
+        width: 40%;
+      }
+    }
+
+    .address {
+      width: 20%;
+      @include flex('center', 'center');
+
+      img {
+        width: 15%;
+      }
+    }
+
+    .userButtons {
+      @include flex('center', 'center');
+
+      .languageMenu {
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        @include flex('center', 'center');
+
+        span {
+          font-size: 15px;
+        }
+      }
+
+      .liked {
+        width: 30px;
+      }
+    }
+
+    .stocks, .paymentAndDelivery, .address, .languageMenu, .liked, .profile, .shoppingCart {
+      &:hover {
+        color: $lightblue;
+      }
+    }
+
+    .languageMenu, .liked, .profile, .shoppingCart {
+      margin: 0 5px;
+      font-size: 25px;
+    }
+  }
+}
