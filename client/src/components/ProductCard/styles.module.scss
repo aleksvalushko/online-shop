@@ -1,0 +1,74 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/constants.scss';
+
+.productCard {
+  width: 270px;
+  height: 400px;
+  border: 1px solid $lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .saleButton {
+      @include flex();
+      min-width: 60px;
+      height: 30px;
+      padding: 0 5px;
+      color: white;
+      background: $lightblue;
+    }
+
+    .likeButton {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 25px;
+
+      &:hover {
+        cursor: pointer;
+        color: $lightblue;
+      }
+    }
+  }
+
+  .content {
+    .title {
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 20px;
+      line-height: 23.87px;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 36px;
+      margin: 20px 0 40px;
+    }
+
+    .noSuchProduct {
+      font-weight: 700;
+      margin-top: 20px;
+    }
+  }
+
+  .notifyEnrollment {
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: 3px 3px 20px 0 #32323240;
+    cursor: pointer;
+
+    .content {
+      color: $lightblue;
+    }
+  }
+}

@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IUser } from '../../types/user';
+import { User } from '../../types/user';
 
 type UserState = {
-	user: IUser;
+	user: User;
 };
 
 const initialState: UserState = {
 	user: {
-		isAuth: true
+		isAuth: false
 	}
 };
 

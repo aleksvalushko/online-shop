@@ -1,0 +1,30 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/constants.scss';
+
+.burgerMenu {
+  @include flex('center', '');
+  flex-direction: column;
+  width: 100%;
+  z-index: 10;
+  background: white;
+
+  div {
+    @include menuLinks;
+  }
+
+  a {
+    span {
+      margin-right: 15px;
+    }
+  }
+
+  .shoppingCart {
+    span {
+      font-size: 25px;
+    }
+  }
+
+  .catalog, .stocks {
+    margin-left: 40px;
+  }
+}
