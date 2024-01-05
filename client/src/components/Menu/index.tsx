@@ -2,46 +2,55 @@ import React from 'react';
 import styles from './styles.module.scss';
 import logo from '../../assets/images/logo.png';
 import { OutlinedHeartIcon, LocationIcon, ProfileIcon, ShoppingCartIcon } from '../../assets/icons/Icons';
-import { Badge, Button, Dropdown, Popover, Space } from 'antd';
-import { CATALOG_ROUTE, FAVORITES_ROUTE, PROFILE_ROUTE, SHOPPING_CART_ROUTE, STOCKS_ROUTE } from '../../constants';
-import { NavLink } from 'react-router-dom';
+import { Badge, Dropdown, Popover, Space } from 'antd';
+import {
+	CATALOG_ROUTE,
+	FAVORITES_ROUTE,
+	MAIN_ROUTE,
+	PROFILE_ROUTE,
+	SHOPPING_CART_ROUTE,
+	STOCKS_ROUTE
+} from '../../constants';
 import { menuPropsType } from '../../types/menu';
 
-const Menu = ({ menuProps, currentLanguage, translate }: menuPropsType) => {
+const Menu = ({ menuProps, currentLanguage, translate, handleNavigate }: menuPropsType) => {
 	return (
 		<>
-			<NavLink className={styles.catalog} to={CATALOG_ROUTE}>
+			<button className={styles.catalog} onClick={() => handleNavigate(CATALOG_ROUTE)}>
 				{translate && translate('header.catalog')}
-			</NavLink>
-			<NavLink className={styles.stocks} to={STOCKS_ROUTE}>
+			</button>
+			<button className={styles.stocks} onClick={() => handleNavigate(STOCKS_ROUTE)}>
 				{translate && translate('header.stocks')}
-			</NavLink>
+			</button>
 			<div className={styles.logo}>
 				<img src={logo} alt='logo' />
 			</div>
-			<NavLink className={styles.address} to={'/'}>
-				<Popover content={translate && translate('header.address_tooltip')}>
-					<LocationIcon style={{ fontSize: '30px' }} />
+			<button className={styles.address} onClick={() => handleNavigate(MAIN_ROUTE)}>
+				<Popover
+					content={
+						<button className={styles.addressPopover}>{translate && translate('header.address_tooltip')}</button>
+					}>
+					<LocationIcon style={{ fontSize: '25px', marginRight: '5px' }} />
 					{translate ? translate('header.address') : ''}
 				</Popover>
-			</NavLink>
+			</button>
 			<div className={styles.userButtons}>
 				<Dropdown menu={menuProps} className={styles.languageMenu}>
-					<Button>
+					<button>
 						<Space>{currentLanguage}</Space>
-					</Button>
+					</button>
 				</Dropdown>
-				<NavLink className={styles.favorites} to={FAVORITES_ROUTE}>
+				<button className={styles.favorites} onClick={() => handleNavigate(FAVORITES_ROUTE)}>
 					<OutlinedHeartIcon />
-				</NavLink>
-				<NavLink className={styles.profile} to={PROFILE_ROUTE}>
+				</button>
+				<button className={styles.profile} onClick={() => handleNavigate(PROFILE_ROUTE)}>
 					<ProfileIcon />
-				</NavLink>
-				<NavLink className={styles.shoppingCart} to={SHOPPING_CART_ROUTE}>
+				</button>
+				<button className={styles.shoppingCart} onClick={() => handleNavigate(SHOPPING_CART_ROUTE)}>
 					<Badge count={1} overflowCount={10}>
 						<ShoppingCartIcon />
 					</Badge>
-				</NavLink>
+				</button>
 			</div>
 		</>
 	);

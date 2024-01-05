@@ -10,11 +10,11 @@
 
   @media (max-width: 768px) {
     justify-content: space-between;
+    max-width: 90%;
   }
 
   @media (max-width: 600px) {
     justify-content: space-between;
-    max-width: 100%;
   }
 
   .logo {
@@ -43,8 +43,8 @@
     @media (max-width: 768px) {
       transition: display 1s;
       position: absolute;
-      top: 75%;
-      width: calc(100vw - 20%);
+      top: 100px;
+      width: 100%;
       display: flex;
       border-radius: 5px;
     }

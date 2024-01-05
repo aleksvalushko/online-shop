@@ -6,7 +6,8 @@
     "address": "Адрес",
     "address_tooltip": "Браслав, ул. Октября 23а/15",
     "stocks": "Акции",
-    "catalog": "Каталог"
+    "catalog": "Каталог",
+    "profile": "Личный кабинет"
   },
   "product": {
     "sale": "РАСПРОДАЖА",

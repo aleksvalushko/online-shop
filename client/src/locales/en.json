@@ -6,7 +6,8 @@
     "address": "Address",
     "address_tooltip": "Braslaw, Oktyabrya 23а/15",
     "stocks": "Stocks",
-    "catalog": "Catalog"
+    "catalog": "Catalog",
+    "profile": "Profile"
   },
   "product": {
     "sale": "SALE",
