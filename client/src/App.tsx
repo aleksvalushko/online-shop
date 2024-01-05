@@ -4,14 +4,15 @@ import { useAppSelector } from './hooks/redux';
 import { ADMIN_ROUTE } from './constants';
 import Header from './components/Header';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const App = () => {
 	const { user } = useAppSelector((state) => state.userReducer);
-	const currentEndpoint = window.location.href.split('/').at(-1);
+	const location = useLocation();
 
 	return (
 		<div className={styles.app}>
-			{`/${currentEndpoint}` === ADMIN_ROUTE ? '' : <Header />}
+			{location.pathname === ADMIN_ROUTE ? '' : <Header />}
 			<AppRouter user={user} />
 		</div>
 	);
