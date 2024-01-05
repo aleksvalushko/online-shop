@@ -1,7 +1,19 @@
 {
   "header": {
-    "address": "Браслав, ул. Октября 23а/15",
+    "logIn": "Войти",
+    "favorites": "Избранное",
+    "shoppingCart": "Корзина",
+    "address": "Адрес",
+    "address_tooltip": "Браслав, ул. Октября 23а/15",
     "stocks": "Акции",
-    "paymentAndDelivery": "Оплата и доставка"
+    "catalog": "Каталог"
+  },
+  "product": {
+    "sale": "РАСПРОДАЖА",
+    "noSuchProduct": "нет в наличии",
+    "notifyEnrollment": "Сообщить о поступлении"
+  },
+  "admin": {
+    "shopName": "Онлайн магазин компьютеров и комплектующих"
   }
 }

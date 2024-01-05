@@ -1,7 +1,19 @@
 {
   "header": {
-    "address": "Braslaw, Oktyabrya 23а/15",
+    "logIn": "Log in",
+    "favorites": "Favorites",
+    "shoppingCart": "Shopping cart",
+    "address": "Address",
+    "address_tooltip": "Braslaw, Oktyabrya 23а/15",
     "stocks": "Stocks",
-    "paymentAndDelivery": "Payment and Delivery"
+    "catalog": "Catalog"
+  },
+  "product": {
+    "sale": "SALE",
+    "noSuchProduct": "out of stock",
+    "notifyEnrollment": "Notify enrollment"
+  },
+  "admin": {
+    "shopName": "Online store of computers and accessories"
   }
 }
