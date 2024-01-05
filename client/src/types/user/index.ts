@@ -1,3 +1,3 @@
-export type IUser = {
+export type User = {
 	isAuth: boolean;
-}
+};
