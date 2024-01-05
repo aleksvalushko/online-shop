@@ -1,0 +1,91 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/constants.scss';
+
+.stocks, .catalog, .logo, .address, .userButtons {
+  width: 15%;
+}
+
+a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  width: 20%;
+
+  img {
+    width: 40%;
+  }
+}
+
+.address {
+  @include flex('center', 'center');
+
+  img {
+    width: 10%;
+  }
+}
+
+.userButtons {
+  @include flex('center', 'center');
+
+  .languageMenu {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    font-size: 20px;
+    margin: 0 5px;
+    @include flex('center', 'center');
+
+    span {
+      font-size: 15px;
+    }
+  }
+
+  .favorites {
+    width: 30px;
+  }
+
+  .shoppingCart {
+    span {
+      font-size: 25px;
+
+      &:hover {
+        color: $lightblue;
+      }
+    }
+    sup {
+      transform: translate(70%, -60%);
+      background: $lightblue;
+
+      &:hover {
+        background: $lightblue;
+      }
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .favorites, .profile, .shoppingCart {
+    margin: 0 5px;
+    font-size: 25px;
+
+    @media (max-width: 1024px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.stocks, .catalog, .address, .languageMenu, .favorites, .profile {
+  &:hover {
+    color: $lightblue;
+  }
+}
