@@ -1,12 +1,14 @@
 import React from 'react';
-import { authRoutes, publicRoutes } from '../routes';
+import { authRoutes, publicRoutes } from '../routes/routes';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { MAIN_ROUTE } from '../constants';
-import { useAppSelector } from '../hooks/redux';
+import { User } from '../types/user';
 
-const AppRouter = () => {
-	const { user } = useAppSelector((state) => state.userReducer);
+type Props = {
+	user: User;
+};
 
+const AppRouter = ({ user }: Props) => {
 	return (
 		<Routes>
 			{user.isAuth &&
