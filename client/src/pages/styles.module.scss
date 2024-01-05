@@ -1,0 +1,31 @@
+@import '../styles/mixins';
+@import '../styles/constants.scss';
+
+.productPage {
+  @include flex('center', 'space-between');
+  max-width: 1264px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.adminPanelPage {
+  max-width: 1440px;
+  width: 100%;
+
+  .header {
+    background: white;
+    border-bottom: 1px solid $lightgray;
+    @include flex('center', 'left');
+    padding: 0 24px;
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+
+  .sider {
+    background: white;
+    padding-top: 24px;
+    border-right: 1px solid $lightgray;
+    height: 100vh;
+  }
+}
