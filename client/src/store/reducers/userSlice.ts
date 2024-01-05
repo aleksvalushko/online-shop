@@ -7,7 +7,7 @@ type UserState = {
 
 const initialState: UserState = {
 	user: {
-		isAuth: false
+		isAuth: true
 	}
 };
 

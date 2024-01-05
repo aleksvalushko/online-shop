@@ -1,13 +1,17 @@
 import styles from './App.module.scss';
-import AppRouter from './components/AppRouter';
-import Header from './components/Header';
+import AppRouter from './AppRouter';
 import { useAppSelector } from './hooks/redux';
+import { ADMIN_ROUTE } from './constants';
+import Header from './components/Header';
+import React from 'react';
 
 const App = () => {
 	const { user } = useAppSelector((state) => state.userReducer);
+	const currentEndpoint = window.location.href.split('/').at(-1);
+
 	return (
 		<div className={styles.app}>
-			{user.isAuth ? '' : <Header />}
+			{`/${currentEndpoint}` === ADMIN_ROUTE ? '' : <Header />}
 			<AppRouter user={user} />
 		</div>
 	);

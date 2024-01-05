@@ -26,6 +26,6 @@
     background: white;
     padding-top: 24px;
     border-right: 1px solid $lightgray;
-    height: 100vh;
+    height: calc(100vh - 64px);
   }
 }
