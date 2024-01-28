@@ -1,6 +1,5 @@
 import {
 	ADMIN_ROUTE,
-	BASKET_ROUTE,
 	CATALOG_ROUTE,
 	FAVORITES_ROUTE,
 	LOGIN_ROUTE,
@@ -12,8 +11,7 @@ import {
 	STOCKS_ROUTE
 } from '../constants';
 import Admin from '../pages/Admin';
-import Basket from '../pages/Basket';
-import Login from '../pages/Login';
+import LoginPage from '../pages/LoginPage';
 import Registration from '../pages/Registration';
 import ProductPage from '../pages/ProductPage';
 import { RouteType } from '../types/routes';
@@ -30,15 +28,23 @@ export const authRoutes: RouteType[] = [
 		Component: Admin
 	},
 	{
-		path: BASKET_ROUTE,
-		Component: Basket
+		path: SHOPPING_CART_ROUTE,
+		Component: ShoppingCartPage
+	},
+	{
+		path: FAVORITES_ROUTE,
+		Component: FavoritesPage
+	},
+	{
+		path: PROFILE_ROUTE,
+		Component: ProfilePage
 	}
 ];
 
 export const publicRoutes: RouteType[] = [
 	{
 		path: LOGIN_ROUTE,
-		Component: Login
+		Component: LoginPage
 	},
 	{
 		path: REGISTRATION_ROUTE,
@@ -55,18 +61,6 @@ export const publicRoutes: RouteType[] = [
 	{
 		path: CATALOG_ROUTE,
 		Component: CatalogPage
-	},
-	{
-		path: FAVORITES_ROUTE,
-		Component: FavoritesPage
-	},
-	{
-		path: PROFILE_ROUTE,
-		Component: ProfilePage
-	},
-	{
-		path: SHOPPING_CART_ROUTE,
-		Component: ShoppingCartPage
 	},
 	{
 		path: PRODUCT_ROUTE + '/:id',

@@ -21,7 +21,7 @@
       height: 30px;
       padding: 0 5px;
       color: white;
-      background: $lightblue;
+      background: $blue;
     }
 
     .likeButton {
@@ -32,7 +32,7 @@
 
       &:hover {
         cursor: pointer;
-        color: $lightblue;
+        color: $blue;
       }
     }
   }
@@ -68,7 +68,7 @@
     cursor: pointer;
 
     .content {
-      color: $lightblue;
+      color: $blue;
     }
   }
 }

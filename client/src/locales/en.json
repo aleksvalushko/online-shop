@@ -6,7 +6,8 @@
     "address": "Address",
     "address_tooltip": "Braslaw, Oktyabrya 23а/15",
     "stocks": "Stocks",
-    "catalog": "Catalog"
+    "catalog": "Catalog",
+    "profile": "Profile"
   },
   "product": {
     "sale": "SALE",
@@ -15,5 +16,9 @@
   },
   "admin": {
     "shopName": "Online store of computers and accessories"
+  },
+  "login": {
+    "emailValidationMessage": "Please input your email!",
+    "passwordValidationMessage": "Please input your password!"
   }
 }

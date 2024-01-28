@@ -3,9 +3,12 @@
 
 .stocks, .catalog, .logo, .address, .userButtons {
   width: 15%;
+  padding: 0;
 }
 
-a {
+button {
+  @include flex('center', 'center');
+  background: none;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 20px;
@@ -14,6 +17,11 @@ a {
   box-shadow: none;
   text-decoration: none;
   color: black;
+  padding: 0;
+
+  &:hover {
+    color: $blue;
+  }
 }
 
 .logo {
@@ -26,14 +34,29 @@ a {
 
 .address {
   @include flex('center', 'center');
+}
 
-  img {
-    width: 10%;
-  }
+.addressPopover {
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .userButtons {
   @include flex('center', 'center');
+
+  button {
+    @include flex('center', 'center');
+    width: 30px;
+
+    &:hover {
+      color: $blue;
+      background-color: white;
+
+      div {
+        color: $blue;
+      }
+    }
+  }
 
   .languageMenu {
     padding: 0;
@@ -57,19 +80,21 @@ a {
       font-size: 25px;
 
       &:hover {
-        color: $lightblue;
+        color: $blue;
+
+        sup {
+          background: $lightblue;
+        }
       }
     }
+
     sup {
       transform: translate(70%, -60%);
-      background: $lightblue;
-
-      &:hover {
-        background: $lightblue;
-      }
+      background: $blue;
 
       span {
         font-size: 12px;
+        color: white;
       }
     }
   }
@@ -81,11 +106,5 @@ a {
     @media (max-width: 1024px) {
       font-size: 20px;
     }
-  }
-}
-
-.stocks, .catalog, .address, .languageMenu, .favorites, .profile {
-  &:hover {
-    color: $lightblue;
   }
 }

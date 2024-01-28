@@ -26,6 +26,34 @@
     background: white;
     padding-top: 24px;
     border-right: 1px solid $lightgray;
-    height: 100vh;
+    height: calc(100vh - 64px);
+  }
+}
+
+.loginPage {
+  width: 100%;
+  @include flex('center', 'center');
+
+  form {
+    border: 1px solid $lightgray;
+    padding: 30px;
+    width: 40%;
+    @include flex('center', 'center');
+    flex-direction: column;
+
+    div {
+      width: 100%;
+      @include flex('center', 'left');
+    }
+
+    button {
+      background: $blue;
+    }
+
+    .rememberMe {
+      :global(.ant-checkbox-checked .ant-checkbox-inner) {
+        background: $blue;
+      }
+    }
   }
 }

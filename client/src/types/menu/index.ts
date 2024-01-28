@@ -9,9 +9,11 @@ export type menuPropsType = {
 	menuProps: menuProps;
 	currentLanguage: string | undefined;
 	translate: ((path: string) => string) | undefined;
+	handleNavigate: (path: string) => void;
 };
 
 export type burgerMenuPropsType = {
 	translate: ((path: string) => string) | undefined;
-	handleBurgerMenuClick: (() => void) | undefined;
+	handleBurgerMenuClick: () => void;
+	handleNavigate: (path: string) => void;
 };

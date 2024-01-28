@@ -1,40 +1,64 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import { OutlinedHeartIcon, ProfileIcon, ShoppingCartIcon } from '../../assets/icons/Icons';
-import { CATALOG_ROUTE, FAVORITES_ROUTE, LOGIN_ROUTE, SHOPPING_CART_ROUTE, STOCKS_ROUTE } from '../../constants';
-import { NavLink } from 'react-router-dom';
+import { CATALOG_ROUTE, FAVORITES_ROUTE, PROFILE_ROUTE, SHOPPING_CART_ROUTE, STOCKS_ROUTE } from '../../constants';
 import { burgerMenuPropsType } from '../../types/menu';
 
-const BurgerMenu = ({ translate, handleBurgerMenuClick }: burgerMenuPropsType) => {
+const BurgerMenu = ({ translate, handleBurgerMenuClick, handleNavigate }: burgerMenuPropsType) => {
 	return (
 		<div className={styles.burgerMenu}>
 			<div>
-				<NavLink className={styles.profile} to={LOGIN_ROUTE} onClick={handleBurgerMenuClick}>
+				<button
+					className={styles.profile}
+					onClick={() => {
+						handleNavigate(PROFILE_ROUTE);
+						handleBurgerMenuClick();
+					}}>
 					<ProfileIcon />
-					{translate && translate('header.logIn')}
-				</NavLink>
+					{translate && translate('header.profile')}
+				</button>
 			</div>
 			<div>
-				<NavLink className={styles.favorites} to={FAVORITES_ROUTE} onClick={handleBurgerMenuClick}>
+				<button
+					className={styles.favorites}
+					onClick={() => {
+						handleNavigate(FAVORITES_ROUTE);
+						handleBurgerMenuClick();
+					}}>
 					<OutlinedHeartIcon />
-					{translate ? translate('header.favorites') : ''}
-				</NavLink>
+					{translate && translate('header.favorites')}
+				</button>
 			</div>
 			<div>
-				<NavLink className={styles.shoppingCart} to={SHOPPING_CART_ROUTE} onClick={handleBurgerMenuClick}>
+				<button
+					className={styles.shoppingCart}
+					onClick={() => {
+						handleNavigate(SHOPPING_CART_ROUTE);
+						handleBurgerMenuClick();
+					}}>
 					<ShoppingCartIcon />
-					{translate ? translate('header.shoppingCart') : ''}
-				</NavLink>
+					{translate && translate('header.shoppingCart')}
+				</button>
 			</div>
 			<div>
-				<NavLink className={styles.catalog} to={CATALOG_ROUTE} onClick={handleBurgerMenuClick}>
+				<button
+					className={styles.catalog}
+					onClick={() => {
+						handleNavigate(CATALOG_ROUTE);
+						handleBurgerMenuClick();
+					}}>
 					{translate && translate('header.catalog')}
-				</NavLink>
+				</button>
 			</div>
 			<div>
-				<NavLink className={styles.stocks} to={STOCKS_ROUTE} onClick={handleBurgerMenuClick}>
+				<button
+					className={styles.stocks}
+					onClick={() => {
+						handleNavigate(STOCKS_ROUTE);
+						handleBurgerMenuClick();
+					}}>
 					{translate && translate('header.stocks')}
-				</NavLink>
+				</button>
 			</div>
 		</div>
 	);

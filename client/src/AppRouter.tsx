@@ -1,8 +1,8 @@
 import React from 'react';
-import { authRoutes, publicRoutes } from '../routes/routes';
+import { authRoutes, publicRoutes } from './routes/routes';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { MAIN_ROUTE } from '../constants';
-import { User } from '../types/user';
+import { MAIN_ROUTE } from './constants';
+import { User } from './types/user';
 
 type Props = {
 	user: User;
