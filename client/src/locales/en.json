@@ -16,5 +16,9 @@
   },
   "admin": {
     "shopName": "Online store of computers and accessories"
+  },
+  "login": {
+    "emailValidationMessage": "Please input your email!",
+    "passwordValidationMessage": "Please input your password!"
   }
 }

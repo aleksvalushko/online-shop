@@ -11,7 +11,7 @@ import {
 	STOCKS_ROUTE
 } from '../constants';
 import Admin from '../pages/Admin';
-import Login from '../pages/Login';
+import LoginPage from '../pages/LoginPage';
 import Registration from '../pages/Registration';
 import ProductPage from '../pages/ProductPage';
 import { RouteType } from '../types/routes';
@@ -44,7 +44,7 @@ export const authRoutes: RouteType[] = [
 export const publicRoutes: RouteType[] = [
 	{
 		path: LOGIN_ROUTE,
-		Component: Login
+		Component: LoginPage
 	},
 	{
 		path: REGISTRATION_ROUTE,

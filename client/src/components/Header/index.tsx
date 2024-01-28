@@ -43,15 +43,15 @@ const Header = () => {
 				return;
 			}
 			case FAVORITES_ROUTE: {
-				!user.isAuth ? navigate(LOGIN_ROUTE) : navigate(FAVORITES_ROUTE);
+				!user.isAuth ? navigate(LOGIN_ROUTE, { state: { from: FAVORITES_ROUTE } }) : navigate(FAVORITES_ROUTE);
 				return;
 			}
 			case PROFILE_ROUTE: {
-				!user.isAuth ? navigate(LOGIN_ROUTE) : navigate(PROFILE_ROUTE);
+				!user.isAuth ? navigate(LOGIN_ROUTE, { state: { from: PROFILE_ROUTE } }) : navigate(PROFILE_ROUTE);
 				return;
 			}
 			case SHOPPING_CART_ROUTE: {
-				!user.isAuth ? navigate(LOGIN_ROUTE) : navigate(SHOPPING_CART_ROUTE);
+				!user.isAuth ? navigate(LOGIN_ROUTE, { state: { from: SHOPPING_CART_ROUTE } }) : navigate(SHOPPING_CART_ROUTE);
 				return;
 			}
 			default: {
