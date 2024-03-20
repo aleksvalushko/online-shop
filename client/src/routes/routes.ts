@@ -10,9 +10,7 @@ import {
 	SHOPPING_CART_ROUTE,
 	STOCKS_ROUTE
 } from '../constants';
-import Admin from '../pages/Admin';
-import LoginPage from '../pages/LoginPage';
-import Registration from '../pages/Registration';
+import AdminPage from '../pages/AdminPage';
 import ProductPage from '../pages/ProductPage';
 import { RouteType } from '../types/routes';
 import MainPage from '../pages/MainPage';
@@ -21,11 +19,12 @@ import CatalogPage from '../pages/CatalogPage';
 import FavoritesPage from '../pages/FavoritesPage';
 import ProfilePage from '../pages/ProfilePage';
 import ShoppingCartPage from '../pages/ShoppingCartPage';
+import LogInSignUpPage from '../pages/LogInSignUpPage';
 
 export const authRoutes: RouteType[] = [
 	{
 		path: ADMIN_ROUTE,
-		Component: Admin
+		Component: AdminPage
 	},
 	{
 		path: SHOPPING_CART_ROUTE,
@@ -44,11 +43,11 @@ export const authRoutes: RouteType[] = [
 export const publicRoutes: RouteType[] = [
 	{
 		path: LOGIN_ROUTE,
-		Component: LoginPage
+		Component: LogInSignUpPage
 	},
 	{
 		path: REGISTRATION_ROUTE,
-		Component: Registration
+		Component: LogInSignUpPage
 	},
 	{
 		path: MAIN_ROUTE,

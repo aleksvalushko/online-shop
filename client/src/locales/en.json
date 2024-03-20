@@ -1,6 +1,5 @@
 {
   "header": {
-    "logIn": "Log in",
     "favorites": "Favorites",
     "shoppingCart": "Shopping cart",
     "address": "Address",
@@ -15,9 +14,26 @@
     "notifyEnrollment": "Notify enrollment"
   },
   "admin": {
-    "shopName": "Online store of computers and accessories"
+    "shopName": "Online store of computers and accessories",
+    "createTypeButton": "Create type",
+    "createBrandButton": "Create brand",
+    "createProductButton": "Create product",
+    "backToMainPageButton": "Back to the main page",
+    "logOutButton": "Log out"
+  },
+  "languages": {
+    "ru": "Russian",
+    "en": "English"
   },
   "login": {
+    "email": "E-mail",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "goBack": "Go back",
+    "logIn": "Log In",
+    "signUp": "Sign up",
+    "logOut": "Log Out",
+    "doYouHaveAccountQuestion": "Already have an account?",
     "emailValidationMessage": "Please input your email!",
     "passwordValidationMessage": "Please input your password!"
   }

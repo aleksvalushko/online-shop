@@ -1,4 +1,5 @@
 import { MenuProps } from 'antd';
+import { ReactNode } from 'react';
 
 type menuProps = {
 	items: MenuProps['items'];
@@ -6,10 +7,17 @@ type menuProps = {
 };
 
 export type menuPropsType = {
-	menuProps: menuProps;
+	menuProps: menuProps | undefined;
 	currentLanguage: string | undefined;
 	translate: ((path: string) => string) | undefined;
 	handleNavigate: (path: string) => void;
+};
+
+export type burgerMenuButtonsPropsType = {
+	className: string;
+	clickCallback: () => void;
+	icon: ReactNode;
+	translations: string | undefined;
 };
 
 export type burgerMenuPropsType = {

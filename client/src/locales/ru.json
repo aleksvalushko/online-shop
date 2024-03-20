@@ -1,6 +1,5 @@
 {
   "header": {
-    "logIn": "Войти",
     "favorites": "Избранное",
     "shoppingCart": "Корзина",
     "address": "Адрес",
@@ -15,10 +14,27 @@
     "notifyEnrollment": "Сообщить о поступлении"
   },
   "admin": {
-    "shopName": "Онлайн магазин компьютеров и комплектующих"
+    "shopName": "Онлайн магазин компьютеров и комплектующих",
+    "createTypeButton": "Создать тип",
+    "createBrandButton": "Создать бренд",
+    "createProductButton": "Создать устройство",
+    "backToMainPageButton": "На главную страницу",
+    "logOutButton": "Выйти"
+  },
+  "languages": {
+    "ru": "Русский",
+    "en": "Английский"
   },
   "login": {
-    "emailValidationMessage": "Пожалуйста, введите ваше имя пользователя!",
+    "email": "E-mail",
+    "password": "Пароль",
+    "rememberMe": "Запомнить меня",
+    "goBack": "Вернуться назад",
+    "logIn": "Войти",
+    "signUp": "Зарегистрироваться",
+    "logOut": "Выйти",
+    "doYouHaveAccountQuestion": "Уже есть аккаунт?",
+    "emailValidationMessage": "Пожалуйста, введите ваш e-mail!",
     "passwordValidationMessage": "Пожалуйста, введите ваш пароль!"
   }
 }

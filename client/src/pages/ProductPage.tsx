@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../ui/ProductCard';
 import { Product } from '../types/product';
 import styles from './styles.module.scss';
 import lifeJacket from '../assets/images/lifeJacket.svg';
