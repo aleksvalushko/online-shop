@@ -9,16 +9,16 @@ module.exports = function(role) {
     try {
       const token = request.headers.authorization.split(' ')[1];
       if (!token) {
-        return next(apiErrors.notAuthorized('User not authorized.'));
+        return next(apiErrors.notAuthorized('Пользователь не авторизован.'));
       }
       const decode = jwt.verify(token, process.env.SECRET_KEY);
       if (decode.role !== role) {
-        return next(apiErrors.forbidden('Access denied.'));
+        return next(apiErrors.forbidden('Доступ запрещен.'));
       }
       request.user = decode;
       next();
     } catch (error) {
-      return next(apiErrors.notAuthorized('User not authorized.'));
+      return next(apiErrors.notAuthorized('Пользователь не авторизован.'));
     }
   };
 };

@@ -8,52 +8,119 @@
   margin: 20px 0;
 }
 
-.adminPanelPage {
-  max-width: 1440px;
+.adminPage {
   width: 100%;
+  background: #fff;
 
-  .header {
-    background: white;
-    border-bottom: 1px solid $lightgray;
+  .headerWrapper {
     @include flex('center', 'left');
+    height: 100px;
+    background: #fff;
+    color: #000;
+    border-bottom: 1px solid $lightgray;
     padding: 0 24px;
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
+    line-height: 20px;
+
+    @media screen and (min-width: 1440px) {
+      .header {
+        width: 1440px;
+        margin: 0 auto;
+        text-align: left;
+      }
+    }
   }
 
-  .sider {
-    background: white;
-    padding-top: 24px;
-    border-right: 1px solid $lightgray;
-    height: calc(100vh - 64px);
+  .siderAndContentWrapper {
+    max-width: 1440px;
+
+    .sider {
+      background: white;
+      padding: 24px 0;
+      border-right: 1px solid $lightgray;
+      height: calc(100vh - 100px);
+
+      :global(.ant-layout-sider-children) {
+        @include flex('center', 'space-between');
+        flex-direction: column;
+      }
+
+      ul {
+        border-inline-end: none;
+
+        li {
+          @include flex('center', 'left');
+          padding: 0 10px;
+        }
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      width: 1440px;
+      margin: 0 auto;
+    }
   }
 }
 
-.loginPage {
+.logInSignUpPage {
   width: 100%;
   @include flex('center', 'center');
 
   form {
     border: 1px solid $lightgray;
+    border-radius: 5px;
     padding: 30px;
     width: 40%;
     @include flex('center', 'center');
     flex-direction: column;
 
-    div {
+    :global(.ant-form-item) {
       width: 100%;
-      @include flex('center', 'left');
+    }
+
+    :global(.ant-col) {
+      max-width: 100%;
     }
 
     button {
       background: $blue;
     }
 
-    .rememberMe {
-      :global(.ant-checkbox-checked .ant-checkbox-inner) {
-        background: $blue;
+    .rememberMeAndGoBackBlock {
+      width: 100%;
+      @include flex('center', 'space-around');
+      margin-bottom: 20px;
+
+      .rememberMe {
+        margin: 0;
+        width: 40%;
+
+        :global(.ant-checkbox-checked .ant-checkbox-inner) {
+          background: $blue;
+        }
       }
+
+      button {
+        background: $white;
+        padding: 0;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
+  }
+
+  .isAccountExistBlock {
+    @include flex('center', 'center');
+    margin-bottom: 20px;
+
+    button {
+      background: $white;
+      padding: 0;
+      margin-left: 5px;
     }
   }
 }

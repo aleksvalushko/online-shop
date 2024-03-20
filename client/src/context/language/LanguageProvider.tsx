@@ -4,7 +4,8 @@ import en from '../../locales/en.json';
 import ru from '../../locales/ru.json';
 import { get } from 'lodash';
 import { EN, RU } from '../../constants';
-import { LanguagesTypes } from '../../types/language';
+import { LanguageMenuTypes, LanguagesTypes } from '../../types/language';
+import { MenuProps } from 'antd';
 
 const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
 	const [currentLanguage, setCurrentLanguage] = useState<string>(RU);
@@ -18,10 +19,25 @@ const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
 		[currentLanguage]
 	);
 
+	const languageMenuItems: MenuProps['items'] = [
+		{ key: RU, label: translate && translate('languages.ru') },
+		{ key: EN, label: translate && translate('languages.en') }
+	];
+
+	const handleLanguageMenuClick: MenuProps['onClick'] = (e) => {
+		setCurrentLanguage && setCurrentLanguage(e.key);
+	};
+
+	const menuProps: LanguageMenuTypes = {
+		items: languageMenuItems,
+		onClick: handleLanguageMenuClick
+	};
+
 	const languageData = {
 		currentLanguage,
 		setCurrentLanguage,
-		translate
+		translate,
+		menuProps
 	};
 
 	return <LanguageContext.Provider value={languageData}>{children}</LanguageContext.Provider>;

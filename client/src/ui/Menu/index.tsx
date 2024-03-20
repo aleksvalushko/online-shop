@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import logo from '../../assets/images/logo.png';
-import { OutlinedHeartIcon, LocationIcon, ProfileIcon, ShoppingCartIcon } from '../../assets/icons/Icons';
+import { LocationIcon, OutlinedHeartIcon, ProfileIcon, ShoppingCartIcon } from '../../assets/icons/Icons';
 import { Badge, Dropdown, Popover, Space } from 'antd';
 import {
 	CATALOG_ROUTE,

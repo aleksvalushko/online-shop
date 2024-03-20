@@ -13,15 +13,15 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 const store = setupStore();
 
 root.render(
-	<React.StrictMode>
-		<Provider store={store}>
-			<LanguageProvider>
-				<BrowserRouter>
-					<App />
-				</BrowserRouter>
-			</LanguageProvider>
-		</Provider>
-	</React.StrictMode>
+	// <React.StrictMode>
+	<Provider store={store}>
+		<LanguageProvider>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</LanguageProvider>
+	</Provider>
+	// </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

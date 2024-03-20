@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
-import useLanguage from '../../context/language/useLanguage';
-import { Button, Dropdown, Space } from 'antd';
-import type { MenuProps } from 'antd';
+import { Button } from 'antd';
 import {
+	ADMIN,
+	ADMIN_ROUTE,
 	CATALOG_ROUTE,
-	EN,
 	FAVORITES_ROUTE,
-	LOGIN_ROUTE,
 	MAIN_ROUTE,
 	PROFILE_ROUTE,
-	RU,
+	REGISTRATION_ROUTE,
 	SHOPPING_CART_ROUTE,
 	STOCKS_ROUTE
 } from '../../constants';
@@ -20,15 +18,11 @@ import BurgerMenu from '../BurgerMenu';
 import logo from '../../assets/images/logo.png';
 import { useAppSelector } from '../../hooks/redux';
 import { useNavigate } from 'react-router-dom';
-
-const items: MenuProps['items'] = [
-	{ key: RU, label: 'Русский' },
-	{ key: EN, label: 'Английский' }
-];
+import useLanguage from '../../context/language/useLanguage';
 
 const Header = () => {
-	const [isBurgerMenuShown, setIsBurgerMenuShown] = useState(false);
-	const { currentLanguage, setCurrentLanguage, translate } = useLanguage();
+	const [isBurgerMenuShown, setIsBurgerMenuShown] = useState<boolean>(false);
+	const { currentLanguage, translate, menuProps } = useLanguage();
 	const { user } = useAppSelector((state) => state.userReducer);
 	const navigate = useNavigate();
 
@@ -43,15 +37,21 @@ const Header = () => {
 				return;
 			}
 			case FAVORITES_ROUTE: {
-				!user.isAuth ? navigate(LOGIN_ROUTE, { state: { from: FAVORITES_ROUTE } }) : navigate(FAVORITES_ROUTE);
+				!user.isAuth ? navigate(REGISTRATION_ROUTE, { state: { from: FAVORITES_ROUTE } }) : navigate(FAVORITES_ROUTE);
 				return;
 			}
 			case PROFILE_ROUTE: {
-				!user.isAuth ? navigate(LOGIN_ROUTE, { state: { from: PROFILE_ROUTE } }) : navigate(PROFILE_ROUTE);
+				!user.isAuth
+					? navigate(REGISTRATION_ROUTE, { state: { from: PROFILE_ROUTE } })
+					: user.role === ADMIN
+					? navigate(ADMIN_ROUTE, { state: { from: ADMIN_ROUTE } })
+					: navigate(PROFILE_ROUTE, { state: { from: PROFILE_ROUTE } });
 				return;
 			}
 			case SHOPPING_CART_ROUTE: {
-				!user.isAuth ? navigate(LOGIN_ROUTE, { state: { from: SHOPPING_CART_ROUTE } }) : navigate(SHOPPING_CART_ROUTE);
+				!user.isAuth
+					? navigate(REGISTRATION_ROUTE, { state: { from: SHOPPING_CART_ROUTE } })
+					: navigate(SHOPPING_CART_ROUTE);
 				return;
 			}
 			default: {
@@ -60,16 +60,8 @@ const Header = () => {
 		}
 	};
 
-	const handleLanguageMenuClick: MenuProps['onClick'] = (e) => {
-		setCurrentLanguage && setCurrentLanguage(e.key);
-	};
 	const handleBurgerMenuClick = () => {
 		setIsBurgerMenuShown(!isBurgerMenuShown);
-	};
-
-	const menuProps = {
-		items,
-		onClick: handleLanguageMenuClick
 	};
 
 	return (
@@ -84,11 +76,6 @@ const Header = () => {
 			<div className={styles.logo}>
 				<img src={logo} alt='logo' />
 			</div>
-			<Dropdown menu={menuProps} className={styles.languageMenu} placement={'bottomRight'}>
-				<Button>
-					<Space>{currentLanguage}</Space>
-				</Button>
-			</Dropdown>
 
 			{isBurgerMenuShown && (
 				<div className={styles.burgerMenuWrapper}>

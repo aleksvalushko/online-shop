@@ -20,7 +20,7 @@ class TypeController {
       where: { id }
     });
     if (!type) {
-      return next(apiErrors.notFound('There is no such type.'));
+      return next(apiErrors.notFound('Такого типа не существует.'));
     }
 
     await Type.destroy({

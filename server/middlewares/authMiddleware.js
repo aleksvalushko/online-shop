@@ -8,11 +8,11 @@ module.exports = function (request, response, next) {
   try {
     const token = request.headers.authorization.split(" ")[1];
     if (!token) {
-      return next(apiErrors.notAuthorized("User not authorized."));
+      return next(apiErrors.notAuthorized("Пользователь не авторизован."));
     }
     request.user = jwt.verify(token, process.env.SECRET_KEY);
     next();
   } catch (error) {
-    return next(apiErrors.notAuthorized("User not authorized."));
+    return next(apiErrors.notAuthorized("Пользователь не авторизован."));
   }
 };
